@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: mart_order_details
+    description: One row per order with refund, net revenue, and gross margin proxy fields.
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+      - name: order_date
+        tests:
+          - not_null
+  - name: mart_cfo_daily_kpis
+    description: Daily CFO KPI table with revenue, refunds, AOV, and gross margin proxies.
+    columns:
+      - name: order_date
+        tests:
+          - not_null
+          - unique
+  - name: mart_channel_performance
+    description: Daily channel performance summary by source, medium, and campaign.

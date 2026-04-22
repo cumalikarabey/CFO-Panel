@@ -1,0 +1,31 @@
+name: cfo_panel
+version: 1.0.0
+config-version: 2
+
+profile: cfo_panel
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+seed-paths: ["seeds"]
+snapshot-paths: ["snapshots"]
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+vars:
+  ga4_project_id: "bigquery-public-data"
+  ga4_dataset: "ga4_obfuscated_sample_ecommerce"
+  start_date: "20201101"
+  end_date: "20210131"
+  assumed_cogs_ratio: 0.58
+
+models:
+  cfo_panel:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: view
+    marts:
+      +materialized: table
+

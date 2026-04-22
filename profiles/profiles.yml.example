@@ -1,0 +1,12 @@
+cfo_panel:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: oauth
+      project: your-gcp-project-id
+      dataset: cfo_panel_dev
+      threads: 4
+      job_execution_timeout_seconds: 300
+      location: US
+      priority: interactive

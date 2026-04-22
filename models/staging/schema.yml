@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: stg_ga4__events
+    description: Cleaned event-level GA4 ecommerce data from the BigQuery public sample dataset.
+    columns:
+      - name: event_date
+        tests:
+          - not_null
+      - name: event_name
+        tests:
+          - not_null
+      - name: user_pseudo_id
+        tests:
+          - not_null
+

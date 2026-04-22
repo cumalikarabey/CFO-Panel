@@ -1,0 +1,2 @@
+"""CFO Panel project package."""
+
